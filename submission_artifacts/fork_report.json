@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "parent_checkpoint": "ckpt_step00010",
+  "parent_step": 10,
+  "branch_id": "branch_experiment_a",
+  "fork_start_step": 10,
+  "fork_end_step": 15,
+  "fork_stream_len": 5,
+  "consumption_len": 3,
+  "sample_fork_batch_ids": [
+    "branch_experiment_a:step00010",
+    "branch_experiment_a:step00011",
+    "branch_experiment_a:step00012"
+  ]
+}

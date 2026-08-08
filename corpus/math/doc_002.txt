@@ -1,0 +1,5 @@
+Linear algebra: a matrix A is invertible iff det(A) != 0.
+Eigenvalues satisfy det(A - lambda I) = 0, the characteristic equation.
+An orthonormal basis diagonalizes a symmetric real matrix via spectral theorem.
+Gradient descent updates parameters theta <- theta - eta * grad L(theta).
+Cross-entropy loss for classification is -sum y_i log(p_i) over classes.

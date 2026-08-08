@@ -1,0 +1,225 @@
+{
+  "all_passed": true,
+  "requirements": {
+    "tokenizer_integrity": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/manifests/*.json tokenizer_hash fields; tokenizer.meta.json",
+      "details": {
+        "tokenizer_hash": "4897743e503ae24528f61ece51ec812a0fda39fc1105f43c4b19e55b24efa511",
+        "manifest_validation": {
+          "ok": true,
+          "count": 22,
+          "errors": []
+        }
+      }
+    },
+    "evaluation_firewall": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/ledgers/../eval_registry.json blocked_events; run.log",
+      "details": {
+        "blocked_event": {
+          "event": "eval_shard_blocked",
+          "shard_id": "shard_eval_eval_001",
+          "content_hash": "19a91a10cf9df0088232a55fad578d789729ef2cc61af8c0c6124297ef2688be",
+          "benchmark_id": "demo_benchmark_eval_001",
+          "role": "eval",
+          "context": "demo_probe",
+          "reason": "never_train flag set in evaluation/validation registry"
+        },
+        "leaked_shards_into_training": []
+      }
+    },
+    "packing_correctness": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/packing_report.json",
+      "details": {
+        "ok": true,
+        "policies": {
+          "pad_only": {
+            "ok": true,
+            "utilization": 1.0,
+            "useful_tokens": 42,
+            "pad_count": 0,
+            "attention_policy": "causal_full",
+            "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+          },
+          "concat_chop": {
+            "ok": true,
+            "utilization": 1.0,
+            "useful_tokens": 42,
+            "pad_count": 0,
+            "attention_policy": "causal_segmented",
+            "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+          },
+          "greedy": {
+            "ok": true,
+            "utilization": 1.0,
+            "useful_tokens": 42,
+            "pad_count": 0,
+            "attention_policy": "causal_segmented",
+            "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+          },
+          "best_fit": {
+            "ok": true,
+            "utilization": 1.0,
+            "useful_tokens": 26,
+            "pad_count": 0,
+            "attention_policy": "causal_segmented",
+            "batch_hash": "894f2e178479c81ea827f9f790f8018d92f1dd0f55d5e3230859c391e7bc78e4"
+          },
+          "structure_preserving": {
+            "ok": true,
+            "utilization": 1.0,
+            "useful_tokens": 42,
+            "pad_count": 0,
+            "attention_policy": "block_diagonal_segments",
+            "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+          }
+        }
+      }
+    },
+    "mixture_compliance": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/manifests/../mixture_schedule.json; mixture_report.json",
+      "details": {
+        "ok": true,
+        "planned_shares": {
+          "web": 0.32,
+          "code": 0.16,
+          "math": 0.12,
+          "indic": 0.24,
+          "agentic": 0.12,
+          "reasoning": 0.04
+        },
+        "actual_consumption_shares": {
+          "web": 0.3181818181818182,
+          "code": 0.13636363636363635,
+          "math": 0.13636363636363635,
+          "indic": 0.22727272727272727,
+          "agentic": 0.13636363636363635,
+          "reasoning": 0.045454545454545456
+        },
+        "stream_shares": {
+          "web": 0.32,
+          "code": 0.16,
+          "math": 0.12,
+          "indic": 0.24,
+          "agentic": 0.12,
+          "reasoning": 0.04
+        },
+        "diffs": {
+          "web": 0.0018181818181818299,
+          "code": 0.02363636363636365,
+          "math": 0.016363636363636358,
+          "indic": 0.012727272727272726,
+          "agentic": 0.016363636363636358,
+          "reasoning": 0.005454545454545455
+        },
+        "protected_floors": {
+          "indic": 0.08,
+          "agentic": 0.08
+        },
+        "floor_ok": true
+      }
+    },
+    "opus_audit_trail": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/ledgers/opus_audit.jsonl",
+      "details": {
+        "decision_types_seen": [
+          "accept",
+          "defer",
+          "floor_override",
+          "reject"
+        ],
+        "report": {
+          "ok": true,
+          "decision_types": [
+            "accept",
+            "defer",
+            "floor_override",
+            "reject"
+          ],
+          "count": 25
+        }
+      }
+    },
+    "crash_recovery": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/resume_proof.json; checkpoints/",
+      "details": {
+        "ok": true,
+        "step": 20,
+        "expected_batch_id": "main:step00020",
+        "resumed_batch_id": "main:step00020",
+        "expected_batch_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+        "resumed_batch_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+        "expected_shard_ids": [
+          "shard_indic_doc_001"
+        ],
+        "resumed_shard_ids": [
+          "shard_indic_doc_001"
+        ],
+        "checkpoint_id": "ckpt_step00020"
+      }
+    },
+    "replay": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/replay_proof.json; ledgers/batch_stream.jsonl",
+      "details": {
+        "ok": true,
+        "start_step": 5,
+        "end_step": 15,
+        "mismatches": []
+      }
+    },
+    "learning_trace": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/ledgers/learning.jsonl",
+      "details": {
+        "learning_records": 22,
+        "sample_record_keys": [
+          "batch_hash",
+          "batch_id",
+          "branch_id",
+          "consumption_offset",
+          "global_step",
+          "gradient_alignment",
+          "gradient_norm",
+          "mean_loss",
+          "perplexity",
+          "run_id",
+          "shard_ids",
+          "token_loss_trace",
+          "useful_tokens"
+        ]
+      }
+    },
+    "throughput": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/performance.json",
+      "details": {
+        "useful_loss_bearing_tokens_per_sec": 176506.85741121144,
+        "packing_utilization_avg": 1.0,
+        "opus_rejection_rate": 0.08
+      }
+    },
+    "fork": {
+      "result": "PASS",
+      "evidence": "submission_artifacts/fork_report.json; ledgers/fork_branch/",
+      "details": {
+        "branch_id": "branch_experiment_a",
+        "parent_checkpoint": "ckpt_step00010"
+      }
+    }
+  },
+  "artifact_paths": {
+    "run_log": "submission_artifacts/run.log",
+    "evidence_json": "submission_artifacts/evidence.json",
+    "evidence_md": "submission_artifacts/evidence.md",
+    "manifests": "submission_artifacts/manifests/",
+    "ledgers": "submission_artifacts/ledgers/",
+    "checkpoints": "submission_artifacts/checkpoints/",
+    "performance": "submission_artifacts/performance.json"
+  }
+}

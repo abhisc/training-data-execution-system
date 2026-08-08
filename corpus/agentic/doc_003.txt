@@ -1,0 +1,5 @@
+User: Pack three short documents into a sequence of length 24 using best-fit.
+Assistant: Sorting by length then placing each into the tightest remaining gap.
+Tool: pack(best_fit, docs=[d1,d2,d3], seq_len=24)
+Observation: packed_util=0.875; pad_tokens=3; segments=3
+Assistant: Packing utilization is 87.5 percent with three isolated segments.

@@ -1,0 +1,5 @@
+User: List files in /tmp and summarize disk usage.
+Assistant: I will run ls -lah /tmp and then du -sh /tmp to report usage.
+Tool: shell(ls -lah /tmp)
+Observation: total 24K; file a.txt 1K; file b.log 8K.
+Assistant: /tmp contains a.txt and b.log. Approximate usage is 24K including directory metadata.

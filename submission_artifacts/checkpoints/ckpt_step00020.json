@@ -1,0 +1,32 @@
+{
+  "checkpoint_id": "ckpt_step00020",
+  "run_id": "run_main",
+  "branch_id": "main",
+  "global_step": 20,
+  "ledger_offset": 18,
+  "learning_offset": 18,
+  "opus_offset": 20,
+  "loader_cursor": {
+    "indic": 12,
+    "math": 9,
+    "web": 21,
+    "agentic": 6,
+    "code": 9,
+    "reasoning": 3
+  },
+  "lane_counts": {
+    "web": 6,
+    "code": 2,
+    "math": 3,
+    "indic": 4,
+    "agentic": 2,
+    "reasoning": 1
+  },
+  "accepted_steps": 18,
+  "model_step_count": 18,
+  "weights_shape": [
+    32,
+    32
+  ],
+  "path": "/Users/abhi/Documents/code/edu/ERAV5/V5/S6/submission_artifacts/checkpoints/ckpt_step00020.npz"
+}

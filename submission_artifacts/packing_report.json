@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "policies": {
+    "pad_only": {
+      "ok": true,
+      "utilization": 1.0,
+      "useful_tokens": 42,
+      "pad_count": 0,
+      "attention_policy": "causal_full",
+      "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+    },
+    "concat_chop": {
+      "ok": true,
+      "utilization": 1.0,
+      "useful_tokens": 42,
+      "pad_count": 0,
+      "attention_policy": "causal_segmented",
+      "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+    },
+    "greedy": {
+      "ok": true,
+      "utilization": 1.0,
+      "useful_tokens": 42,
+      "pad_count": 0,
+      "attention_policy": "causal_segmented",
+      "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+    },
+    "best_fit": {
+      "ok": true,
+      "utilization": 1.0,
+      "useful_tokens": 26,
+      "pad_count": 0,
+      "attention_policy": "causal_segmented",
+      "batch_hash": "894f2e178479c81ea827f9f790f8018d92f1dd0f55d5e3230859c391e7bc78e4"
+    },
+    "structure_preserving": {
+      "ok": true,
+      "utilization": 1.0,
+      "useful_tokens": 42,
+      "pad_count": 0,
+      "attention_policy": "block_diagonal_segments",
+      "batch_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32"
+    }
+  }
+}

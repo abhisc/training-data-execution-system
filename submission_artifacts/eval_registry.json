@@ -1,0 +1,43 @@
+{
+  "entries": {
+    "shard_eval_eval_001": {
+      "shard_id": "shard_eval_eval_001",
+      "content_hash": "19a91a10cf9df0088232a55fad578d789729ef2cc61af8c0c6124297ef2688be",
+      "benchmark_id": "demo_benchmark_eval_001",
+      "role": "eval",
+      "never_train": true
+    },
+    "shard_eval_eval_002": {
+      "shard_id": "shard_eval_eval_002",
+      "content_hash": "95f38bd35e4d7afc4e48558cd06884e49dad47f8ba3c02c77c8c2697141ffbe3",
+      "benchmark_id": "demo_benchmark_eval_002",
+      "role": "eval",
+      "never_train": true
+    },
+    "shard_val_val_001": {
+      "shard_id": "shard_val_val_001",
+      "content_hash": "54402b185ccf92872ed0c7db3abb5243575d841aa9e5554b0aeea75225d4b71c",
+      "benchmark_id": "demo_validation_val_001",
+      "role": "val",
+      "never_train": true
+    },
+    "shard_val_val_002": {
+      "shard_id": "shard_val_val_002",
+      "content_hash": "418cb29aac1169774133808726a3a56e333f6b90b15f5551dd22db8913b340fe",
+      "benchmark_id": "demo_validation_val_002",
+      "role": "val",
+      "never_train": true
+    }
+  },
+  "blocked_events": [
+    {
+      "event": "eval_shard_blocked",
+      "shard_id": "shard_eval_eval_001",
+      "content_hash": "19a91a10cf9df0088232a55fad578d789729ef2cc61af8c0c6124297ef2688be",
+      "benchmark_id": "demo_benchmark_eval_001",
+      "role": "eval",
+      "context": "demo_probe",
+      "reason": "never_train flag set in evaluation/validation registry"
+    }
+  ]
+}

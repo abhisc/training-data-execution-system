@@ -1,0 +1,5 @@
+EVAL BENCHMARK QUESTION: What is the capital of France?
+Answer: Paris. This document is held out for evaluation only and must never train.
+Contamination of this item into training would invalidate the benchmark score.
+The firewall must block any shard overlapping this evaluation content hash.
+Never-train flag is set; dataloader rejection is mandatory and logged.

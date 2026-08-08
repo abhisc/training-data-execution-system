@@ -1,0 +1,118 @@
+{
+  "crashed": true,
+  "crash_at": 25,
+  "crash_message": "Simulated crash at global_step=25 after checkpoint=ckpt_step00020",
+  "checkpoint_id": "ckpt_step00020",
+  "resume_step": 20,
+  "proof": {
+    "ok": true,
+    "step": 20,
+    "expected_batch_id": "main:step00020",
+    "resumed_batch_id": "main:step00020",
+    "expected_batch_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+    "resumed_batch_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+    "expected_shard_ids": [
+      "shard_indic_doc_001"
+    ],
+    "resumed_shard_ids": [
+      "shard_indic_doc_001"
+    ],
+    "checkpoint_id": "ckpt_step00020"
+  },
+  "original_stream_len": 25,
+  "resumed_stream": [
+    {
+      "global_step": 20,
+      "batch_id": "main:step00020",
+      "batch_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+      "shard_ids": [
+        "shard_indic_doc_001"
+      ],
+      "token_spans": [
+        {
+          "doc_id": "indic/doc_001",
+          "shard_id": "shard_indic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "lane": "indic",
+      "stage": "mid-train",
+      "packing_policy": "best_fit",
+      "opus_decision": "accept",
+      "branch_id": "main",
+      "loader_cursor_after": {
+        "indic": 15,
+        "math": 9,
+        "web": 21,
+        "agentic": 6,
+        "code": 9,
+        "reasoning": 3
+      }
+    },
+    {
+      "global_step": 21,
+      "batch_id": "main:step00021",
+      "batch_hash": "80aff445f6cb3f56e43d68c30ebea06ff396d4bed511746b466d0159d10123ed",
+      "shard_ids": [
+        "shard_web_doc_002"
+      ],
+      "token_spans": [
+        {
+          "doc_id": "web/doc_002",
+          "shard_id": "shard_web_doc_002",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "lane": "web",
+      "stage": "mid-train",
+      "packing_policy": "best_fit",
+      "opus_decision": "accept",
+      "branch_id": "main",
+      "loader_cursor_after": {
+        "indic": 15,
+        "math": 9,
+        "web": 24,
+        "agentic": 6,
+        "code": 9,
+        "reasoning": 3
+      }
+    },
+    {
+      "global_step": 22,
+      "batch_id": "main:step00022",
+      "batch_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+      "shard_ids": [
+        "shard_indic_doc_001"
+      ],
+      "token_spans": [
+        {
+          "doc_id": "indic/doc_001",
+          "shard_id": "shard_indic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "lane": "indic",
+      "stage": "mid-train",
+      "packing_policy": "best_fit",
+      "opus_decision": "reject",
+      "branch_id": "main",
+      "loader_cursor_after": {
+        "indic": 18,
+        "math": 9,
+        "web": 24,
+        "agentic": 6,
+        "code": 9,
+        "reasoning": 3
+      }
+    }
+  ]
+}

@@ -1,0 +1,1336 @@
+{
+  "total_steps": 70,
+  "stages": [
+    {
+      "name": "early-train",
+      "start_step": 0,
+      "end_step": 20,
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "annealing_reserve_lanes": [],
+      "packing_policy": "greedy"
+    },
+    {
+      "name": "mid-train",
+      "start_step": 20,
+      "end_step": 40,
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "annealing_reserve_lanes": [],
+      "packing_policy": "best_fit"
+    },
+    {
+      "name": "annealing",
+      "start_step": 40,
+      "end_step": 80,
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "annealing_reserve_lanes": [
+        "math",
+        "reasoning",
+        "agentic"
+      ],
+      "packing_policy": "structure_preserving"
+    }
+  ],
+  "steps": [
+    {
+      "global_step": 0,
+      "stage": "early-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 1,
+      "stage": "early-train",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 2,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 3,
+      "stage": "early-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 4,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 5,
+      "stage": "early-train",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 6,
+      "stage": "early-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 7,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 8,
+      "stage": "early-train",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 9,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 10,
+      "stage": "early-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 11,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 12,
+      "stage": "early-train",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 13,
+      "stage": "early-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 14,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 15,
+      "stage": "early-train",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 16,
+      "stage": "early-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 17,
+      "stage": "early-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 18,
+      "stage": "early-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 19,
+      "stage": "early-train",
+      "lane": "reasoning",
+      "lane_weights": {
+        "web": 0.35,
+        "code": 0.2,
+        "math": 0.15,
+        "indic": 0.1,
+        "agentic": 0.1,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.08,
+        "agentic": 0.08
+      },
+      "packing_policy": "greedy"
+    },
+    {
+      "global_step": 20,
+      "stage": "mid-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 21,
+      "stage": "mid-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 22,
+      "stage": "mid-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 23,
+      "stage": "mid-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 24,
+      "stage": "mid-train",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 25,
+      "stage": "mid-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 26,
+      "stage": "mid-train",
+      "lane": "reasoning",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 27,
+      "stage": "mid-train",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 28,
+      "stage": "mid-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 29,
+      "stage": "mid-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 30,
+      "stage": "mid-train",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 31,
+      "stage": "mid-train",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 32,
+      "stage": "mid-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 33,
+      "stage": "mid-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 34,
+      "stage": "mid-train",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 35,
+      "stage": "mid-train",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 36,
+      "stage": "mid-train",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 37,
+      "stage": "mid-train",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 38,
+      "stage": "mid-train",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 39,
+      "stage": "mid-train",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.25,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.12,
+        "agentic": 0.13,
+        "reasoning": 0.1
+      },
+      "protected_floors": {
+        "indic": 0.1,
+        "agentic": 0.1
+      },
+      "packing_policy": "best_fit"
+    },
+    {
+      "global_step": 40,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 41,
+      "stage": "annealing",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 42,
+      "stage": "annealing",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 43,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 44,
+      "stage": "annealing",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 45,
+      "stage": "annealing",
+      "lane": "reasoning",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 46,
+      "stage": "annealing",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 47,
+      "stage": "annealing",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 48,
+      "stage": "annealing",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 49,
+      "stage": "annealing",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 50,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 51,
+      "stage": "annealing",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 52,
+      "stage": "annealing",
+      "lane": "reasoning",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 53,
+      "stage": "annealing",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 54,
+      "stage": "annealing",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 55,
+      "stage": "annealing",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 56,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 57,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 58,
+      "stage": "annealing",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 59,
+      "stage": "annealing",
+      "lane": "reasoning",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 60,
+      "stage": "annealing",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 61,
+      "stage": "annealing",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 62,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 63,
+      "stage": "annealing",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 64,
+      "stage": "annealing",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 65,
+      "stage": "annealing",
+      "lane": "math",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 66,
+      "stage": "annealing",
+      "lane": "web",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 67,
+      "stage": "annealing",
+      "lane": "indic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 68,
+      "stage": "annealing",
+      "lane": "code",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    },
+    {
+      "global_step": 69,
+      "stage": "annealing",
+      "lane": "agentic",
+      "lane_weights": {
+        "web": 0.15,
+        "code": 0.2,
+        "math": 0.2,
+        "indic": 0.15,
+        "agentic": 0.15,
+        "reasoning": 0.15
+      },
+      "protected_floors": {
+        "indic": 0.12,
+        "agentic": 0.12
+      },
+      "packing_policy": "structure_preserving"
+    }
+  ],
+  "planned_shares": {
+    "web": 0.21428571428571427,
+    "code": 0.17142857142857143,
+    "math": 0.15714285714285714,
+    "indic": 0.2,
+    "agentic": 0.18571428571428572,
+    "reasoning": 0.07142857142857142
+  }
+}

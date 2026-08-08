@@ -1,0 +1,5 @@
+The history of machine learning begins with early statistical pattern recognition.
+Scientists developed algorithms that could learn from examples rather than fixed rules.
+Modern neural networks extend these ideas with layered feature extraction.
+Large language models train on vast text corpora spanning many domains and languages.
+Data quality and mixture design critically affect what a model learns during pretraining.

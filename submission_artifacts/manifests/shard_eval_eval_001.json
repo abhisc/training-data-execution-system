@@ -1,0 +1,34 @@
+{
+  "shard_id": "shard_eval_eval_001",
+  "source_ids": [
+    "corpus:eval:eval_001.txt"
+  ],
+  "document_ids": [
+    "eval/eval_001"
+  ],
+  "content_hash": "19a91a10cf9df0088232a55fad578d789729ef2cc61af8c0c6124297ef2688be",
+  "tokenizer_hash": "4897743e503ae24528f61ece51ec812a0fda39fc1105f43c4b19e55b24efa511",
+  "token_count": 144,
+  "language": "en",
+  "script": "latin",
+  "capability_lane": "eval",
+  "license": "CC-BY-4.0-demo",
+  "provenance_tier": "synthetic_demo",
+  "cleaning_pipeline_hash": "24b52c6578ab9dca4a130de6f054b8d932436fb385e70af9fbe5bfe1bc2dcfa2",
+  "deduplication_status": "unique",
+  "contamination_status": "eval_registered",
+  "evaluation_or_test_overlap_status": "eval_holdout",
+  "never_train": true,
+  "role": "eval",
+  "shard_path": "/Users/abhi/Documents/code/edu/ERAV5/V5/S6/submission_artifacts/shards/shard_eval_eval_001.bin",
+  "spans": [
+    {
+      "document_id": "eval/eval_001",
+      "source_id": "corpus:eval:eval_001.txt",
+      "start": 0,
+      "end": 144,
+      "prompt_end": null
+    }
+  ],
+  "benchmark_id": "demo_benchmark_eval_001"
+}

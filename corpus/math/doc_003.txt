@@ -1,0 +1,5 @@
+Bayes theorem: P(H|E) = P(E|H) P(H) / P(E).
+Variance of a random variable X equals E[X^2] - (E[X])^2.
+The central limit theorem says sample means converge in distribution to Normal.
+Maximum likelihood estimation chooses parameters maximizing the likelihood of data.
+KL divergence measures how one probability distribution differs from another.

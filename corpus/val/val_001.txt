@@ -1,0 +1,5 @@
+VALIDATION SET: Early stopping uses held-out loss on this validation document.
+It must not contribute gradient signal during training steps.
+The registry marks this shard as never_train with role validation.
+Firewall checks occur before packing and before OPUS acceptance.
+Blocking events are written to the execution log for audit.

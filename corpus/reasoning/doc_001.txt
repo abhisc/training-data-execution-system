@@ -1,0 +1,5 @@
+If all birds can fly and penguins are birds, does that imply penguins can fly?
+The premises are false for penguins, so the conclusion does not follow from reality.
+Logical form: All A are B; C is A; therefore C is B. Valid form, false premise.
+Sound reasoning requires both valid structure and true premises.
+Counterexamples help expose hidden assumptions in everyday arguments.

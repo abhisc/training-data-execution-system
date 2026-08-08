@@ -1,0 +1,5 @@
+EVAL BENCHMARK MATH: What is 12 factorial?
+Answer: 479001600. Reserved for MMLU-style evaluation and never for training.
+Any attempt to pack this shard into a loss-bearing batch must be rejected.
+Benchmark id: demo_mmlu_math_001. Content hash registered in eval registry.
+Validation firewalls protect the integrity of reported model scores.

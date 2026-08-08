@@ -1,0 +1,5 @@
+Climate science relies on large observational datasets and numerical simulations.
+Researchers model atmospheric dynamics using partial differential equations on grids.
+Satellite remote sensing provides continuous global coverage of temperature and ice.
+Policy makers need clear uncertainty estimates when interpreting climate projections.
+Interdisciplinary teams combine physics, statistics, and computational methods daily.

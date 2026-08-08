@@ -1,0 +1,34 @@
+{
+  "shard_id": "shard_math_doc_003",
+  "source_ids": [
+    "corpus:math:doc_003.txt"
+  ],
+  "document_ids": [
+    "math/doc_003"
+  ],
+  "content_hash": "0cae43449fdaacae525b2789beb2f667f895be0e2725a8abcda557c3fda4750a",
+  "tokenizer_hash": "4897743e503ae24528f61ece51ec812a0fda39fc1105f43c4b19e55b24efa511",
+  "token_count": 171,
+  "language": "en",
+  "script": "latin",
+  "capability_lane": "math",
+  "license": "CC-BY-4.0-demo",
+  "provenance_tier": "synthetic_demo",
+  "cleaning_pipeline_hash": "24b52c6578ab9dca4a130de6f054b8d932436fb385e70af9fbe5bfe1bc2dcfa2",
+  "deduplication_status": "unique",
+  "contamination_status": "clean",
+  "evaluation_or_test_overlap_status": "none",
+  "never_train": false,
+  "role": "train",
+  "shard_path": "/Users/abhi/Documents/code/edu/ERAV5/V5/S6/submission_artifacts/shards/shard_math_doc_003.bin",
+  "spans": [
+    {
+      "document_id": "math/doc_003",
+      "source_id": "corpus:math:doc_003.txt",
+      "start": 0,
+      "end": 171,
+      "prompt_end": null
+    }
+  ],
+  "benchmark_id": null
+}

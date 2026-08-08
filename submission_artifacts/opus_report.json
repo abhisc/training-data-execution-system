@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "decision_types": [
+    "accept",
+    "defer",
+    "floor_override",
+    "reject"
+  ],
+  "count": 25
+}

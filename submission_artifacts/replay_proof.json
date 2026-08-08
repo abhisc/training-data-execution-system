@@ -1,0 +1,287 @@
+{
+  "ok": true,
+  "start_step": 5,
+  "end_step": 15,
+  "comparisons": [
+    {
+      "step": 5,
+      "ok": true,
+      "original_batch_id": "main:step00005",
+      "replay_batch_id": "replay:step00005",
+      "original_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32",
+      "replay_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32",
+      "original_spans": [
+        {
+          "doc_id": "agentic/doc_001",
+          "shard_id": "shard_agentic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "agentic/doc_001",
+          "shard_id": "shard_agentic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 6,
+      "ok": true,
+      "original_batch_id": "main:step00006",
+      "replay_batch_id": "replay:step00006",
+      "original_hash": "8d495ec969b4727e51e4af1a92eb5b16e2802c8c4783660d521cb084437cdda3",
+      "replay_hash": "8d495ec969b4727e51e4af1a92eb5b16e2802c8c4783660d521cb084437cdda3",
+      "original_spans": [
+        {
+          "doc_id": "code/doc_001",
+          "shard_id": "shard_code_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "code/doc_001",
+          "shard_id": "shard_code_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 7,
+      "ok": true,
+      "original_batch_id": "main:step00007",
+      "replay_batch_id": "replay:step00007",
+      "original_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "replay_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "original_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 8,
+      "ok": true,
+      "original_batch_id": "main:step00008",
+      "replay_batch_id": "replay:step00008",
+      "original_hash": "c260a1bd4f119373cb4d62b66d200ecd8e0e6273d240f3ac57f5b048cb64b0b9",
+      "replay_hash": "c260a1bd4f119373cb4d62b66d200ecd8e0e6273d240f3ac57f5b048cb64b0b9",
+      "original_spans": [
+        {
+          "doc_id": "math/doc_001",
+          "shard_id": "shard_math_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "math/doc_001",
+          "shard_id": "shard_math_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 9,
+      "ok": true,
+      "original_batch_id": "main:step00009",
+      "replay_batch_id": "replay:step00009",
+      "original_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "replay_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "original_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "ok": true,
+      "original_batch_id": "main:step00010",
+      "replay_batch_id": "replay:step00010",
+      "original_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+      "replay_hash": "b5a4c5af20d15a7b8bab5a070d870eb1a75295800221053bb35bd1013231c0ef",
+      "original_spans": [
+        {
+          "doc_id": "indic/doc_001",
+          "shard_id": "shard_indic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "indic/doc_001",
+          "shard_id": "shard_indic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 11,
+      "ok": true,
+      "original_batch_id": "main:step00011",
+      "replay_batch_id": "replay:step00011",
+      "original_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "replay_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "original_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 12,
+      "ok": true,
+      "original_batch_id": "main:step00012",
+      "replay_batch_id": "replay:step00012",
+      "original_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32",
+      "replay_hash": "eaf7c039b24f31a710e1b2342facba3c3aad7a6301661048d42dec5d19c0dd32",
+      "original_spans": [
+        {
+          "doc_id": "agentic/doc_001",
+          "shard_id": "shard_agentic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "agentic/doc_001",
+          "shard_id": "shard_agentic_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 13,
+      "ok": true,
+      "original_batch_id": "main:step00013",
+      "replay_batch_id": "replay:step00013",
+      "original_hash": "8d495ec969b4727e51e4af1a92eb5b16e2802c8c4783660d521cb084437cdda3",
+      "replay_hash": "8d495ec969b4727e51e4af1a92eb5b16e2802c8c4783660d521cb084437cdda3",
+      "original_spans": [
+        {
+          "doc_id": "code/doc_001",
+          "shard_id": "shard_code_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "code/doc_001",
+          "shard_id": "shard_code_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    },
+    {
+      "step": 14,
+      "ok": true,
+      "original_batch_id": "main:step00014",
+      "replay_batch_id": "replay:step00014",
+      "original_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "replay_hash": "92d02b69194e7c0274c27720e308791a33fa97b22156bf5dc5faa4e8ca82afaf",
+      "original_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ],
+      "replay_spans": [
+        {
+          "doc_id": "web/doc_001",
+          "shard_id": "shard_web_doc_001",
+          "start": 0,
+          "end": 64,
+          "src_start": 0,
+          "src_end": 64
+        }
+      ]
+    }
+  ]
+}

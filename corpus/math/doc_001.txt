@@ -1,0 +1,5 @@
+Theorem: The sum of the first n natural numbers is n(n+1)/2.
+Proof by induction. Base case n=1 holds. Assume true for k.
+Then sum to k+1 equals k(k+1)/2 + (k+1) = (k+1)(k+2)/2.
+A geometric series with first term a and ratio r sums to a(1-r^n)/(1-r) for r != 1.
+The derivative of x^n is n x^{n-1} for positive integer n.

@@ -1,0 +1,15 @@
+def fibonacci(n: int) -> int:
+    if n < 2:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+class Stack:
+    def __init__(self):
+        self._items = []
+    def push(self, x):
+        self._items.append(x)
+    def pop(self):
+        return self._items.pop()

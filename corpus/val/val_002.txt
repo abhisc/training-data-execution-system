@@ -1,0 +1,5 @@
+VALIDATION SET: Mixture compliance is measured against planned lane shares.
+This validation text is excluded from consumption and learning ledgers.
+Protected floor checks use training consumption only, never validation tokens.
+Replay proofs reconstruct training batches, not validation batches.
+Audit completed only when all never_train shards remain blocked.

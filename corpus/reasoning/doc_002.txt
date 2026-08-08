@@ -1,0 +1,5 @@
+A farmer has 17 sheep and all but 9 die. How many are left?
+The phrase all but 9 die means 9 survive, so 9 sheep remain.
+Surface reading may suggest subtraction of 9 from 17 incorrectly.
+Careful parsing of natural language is required for word problems.
+Chain-of-thought traces make intermediate inferences explicit for audit.

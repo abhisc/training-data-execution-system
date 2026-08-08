@@ -1,0 +1,5 @@
+Suppose a model trains on contaminated evaluation questions.
+Then reported accuracy no longer estimates true generalization.
+Firewall registries prevent evaluation shards from entering loss batches.
+Protected floors keep rare but critical lanes from vanishing under OPUS.
+Reproducible ledgers allow exact replay of any historical training interval.
