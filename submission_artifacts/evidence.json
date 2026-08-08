@@ -160,6 +160,9 @@
         "resumed_shard_ids": [
           "shard_indic_doc_001"
         ],
+        "token_ids_match": true,
+        "position_ids_match": true,
+        "loss_mask_match": true,
         "checkpoint_id": "ckpt_step00020"
       }
     },
@@ -199,7 +202,7 @@
       "result": "PASS",
       "evidence": "submission_artifacts/performance.json",
       "details": {
-        "useful_loss_bearing_tokens_per_sec": 176506.85741121144,
+        "useful_loss_bearing_tokens_per_sec": 137198.4247220389,
         "packing_utilization_avg": 1.0,
         "opus_rejection_rate": 0.08
       }

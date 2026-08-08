@@ -258,7 +258,8 @@ class Trainer:
             "accepted_steps": payload["accepted_steps"],
             "model_step_count": self.model.step_count,
             "weights_shape": list(self.model.weights.shape),
-            "path": str(path),
+            # Portable relative path (no machine-local absolute paths).
+            "path": f"checkpoints/{ckpt_id}.npz",
         }
         meta_path = self.checkpoint_dir / f"{ckpt_id}.json"
         meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
@@ -304,6 +305,11 @@ class Trainer:
             "batch_hash": batch.batch_hash,
             "shard_ids": list(batch.shard_ids),
             "token_spans": batch.token_spans,
+            # Bit-exact resume/replay evidence: token ids + sequence positions.
+            "token_ids": list(batch.token_ids),
+            "position_ids": list(batch.position_ids),
+            "loss_mask": list(batch.loss_mask),
+            "segment_ids": list(batch.segment_ids),
             "lane": batch.lane,
             "stage": plan.stage,
             "packing_policy": batch.packing_policy,

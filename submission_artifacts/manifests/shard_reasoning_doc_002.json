@@ -20,7 +20,7 @@
   "evaluation_or_test_overlap_status": "none",
   "never_train": false,
   "role": "train",
-  "shard_path": "/Users/abhi/Documents/code/edu/ERAV5/V5/S6/submission_artifacts/shards/shard_reasoning_doc_002.bin",
+  "shard_path": "shards/shard_reasoning_doc_002.bin",
   "spans": [
     {
       "document_id": "reasoning/doc_002",

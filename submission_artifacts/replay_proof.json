@@ -29,7 +29,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 6,
@@ -57,7 +60,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 7,
@@ -85,7 +91,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 8,
@@ -113,7 +122,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 9,
@@ -141,7 +153,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 10,
@@ -169,7 +184,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 11,
@@ -197,7 +215,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 12,
@@ -225,7 +246,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 13,
@@ -253,7 +277,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     },
     {
       "step": 14,
@@ -281,7 +308,10 @@
           "src_start": 0,
           "src_end": 64
         }
-      ]
+      ],
+      "token_ids_match": true,
+      "position_ids_match": true,
+      "loss_mask_match": true
     }
   ]
 }

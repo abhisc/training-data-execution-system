@@ -84,11 +84,19 @@ def prove_resume(
             "step": step,
         }
 
+    token_ids_match = batch.token_ids == expected.get("token_ids", batch.token_ids)
+    position_ids_match = batch.position_ids == expected.get(
+        "position_ids", batch.position_ids
+    )
+    loss_mask_match = batch.loss_mask == expected.get("loss_mask", batch.loss_mask)
     matched = (
         batch.batch_id == expected["batch_id"]
         and batch.batch_hash == expected["batch_hash"]
         and batch.shard_ids == expected["shard_ids"]
         and batch.token_spans == expected["token_spans"]
+        and token_ids_match
+        and position_ids_match
+        and loss_mask_match
     )
     return {
         "ok": matched,
@@ -99,6 +107,9 @@ def prove_resume(
         "resumed_batch_hash": batch.batch_hash,
         "expected_shard_ids": expected["shard_ids"],
         "resumed_shard_ids": batch.shard_ids,
+        "token_ids_match": token_ids_match,
+        "position_ids_match": position_ids_match,
+        "loss_mask_match": loss_mask_match,
         "checkpoint_id": resumed.last_checkpoint_id,
     }
 
@@ -158,11 +169,19 @@ def replay_interval(
             comparisons.append({"step": s, "ok": False, "reason": "missing original"})
             all_ok = False
             continue
+        token_ids_match = batch.token_ids == expected.get("token_ids", batch.token_ids)
+        position_ids_match = batch.position_ids == expected.get(
+            "position_ids", batch.position_ids
+        )
+        loss_mask_match = batch.loss_mask == expected.get("loss_mask", batch.loss_mask)
         ok = (
             batch.batch_id.split(":")[-1] == expected["batch_id"].split(":")[-1]
             and batch.batch_hash == expected["batch_hash"]
             and batch.shard_ids == expected["shard_ids"]
             and batch.token_spans == expected["token_spans"]
+            and token_ids_match
+            and position_ids_match
+            and loss_mask_match
         )
         # Note: batch_id includes branch prefix; compare step suffix + hash
         comparisons.append(
@@ -175,6 +194,9 @@ def replay_interval(
                 "replay_hash": batch.batch_hash,
                 "original_spans": expected["token_spans"],
                 "replay_spans": batch.token_spans,
+                "token_ids_match": token_ids_match,
+                "position_ids_match": position_ids_match,
+                "loss_mask_match": loss_mask_match,
             }
         )
         if not ok:

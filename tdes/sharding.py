@@ -146,6 +146,11 @@ def create_shards_from_corpus(
                 prompt_end=prompt_end,
             )
 
+            # Portable relative path for on-disk manifests (no machine-local abs paths).
+            # Keep an absolute path in-memory for reliable loading during this process.
+            rel_shard_path = f"{shards_dir.name}/{shard_id}.bin"
+            abs_shard_path = str(shard_path.resolve())
+
             manifest = ShardManifest(
                 shard_id=shard_id,
                 source_ids=[source_id],
@@ -164,13 +169,15 @@ def create_shards_from_corpus(
                 evaluation_or_test_overlap_status=eval_overlap,
                 never_train=never_train,
                 role=role,
-                shard_path=str(shard_path),
+                shard_path=abs_shard_path,
                 spans=[asdict(span)],
                 benchmark_id=benchmark_id,
             )
 
             man_path = manifests_dir / f"{shard_id}.json"
-            man_path.write_text(json.dumps(manifest.to_dict(), indent=2), encoding="utf-8")
+            on_disk = manifest.to_dict()
+            on_disk["shard_path"] = rel_shard_path
+            man_path.write_text(json.dumps(on_disk, indent=2), encoding="utf-8")
             manifests.append(manifest)
 
     return manifests
@@ -185,22 +192,60 @@ def load_manifests(manifests_dir: Path) -> List[ShardManifest]:
     return out
 
 
-def load_shard_tokens(manifest: ShardManifest) -> np.ndarray:
-    return np.fromfile(manifest.shard_path, dtype=np.uint32)
+def resolve_shard_path(
+    manifest: ShardManifest,
+    base_dir: Optional[Path] = None,
+) -> Path:
+    """Resolve shard_path whether absolute or portable-relative."""
+    p = Path(manifest.shard_path)
+    if p.is_file():
+        return p
+
+    candidates: List[Path] = []
+    if base_dir is not None:
+        base_dir = Path(base_dir)
+        candidates.extend(
+            [
+                base_dir / p,
+                base_dir / p.name,
+                base_dir / "shards" / p.name,
+            ]
+        )
+    cwd = Path.cwd()
+    candidates.extend(
+        [
+            cwd / p,
+            cwd / "submission_artifacts" / p,
+            cwd / "submission_artifacts" / "shards" / p.name,
+            cwd / "shards" / p.name,
+        ]
+    )
+    for cand in candidates:
+        if cand.is_file():
+            return cand
+    return p
+
+
+def load_shard_tokens(
+    manifest: ShardManifest,
+    base_dir: Optional[Path] = None,
+) -> np.ndarray:
+    return np.fromfile(resolve_shard_path(manifest, base_dir), dtype=np.uint32)
 
 
 def validate_manifest(
     manifest: ShardManifest,
     expected_tokenizer_hash: Optional[str] = None,
+    base_dir: Optional[Path] = None,
 ) -> List[str]:
     """Return list of validation errors (empty if valid)."""
     errors: List[str] = []
-    path = Path(manifest.shard_path)
+    path = resolve_shard_path(manifest, base_dir)
     if not path.exists():
-        errors.append(f"missing shard file: {path}")
+        errors.append(f"missing shard file: {manifest.shard_path}")
         return errors
 
-    tokens = load_shard_tokens(manifest)
+    tokens = load_shard_tokens(manifest, base_dir)
     if int(tokens.size) != manifest.token_count:
         errors.append(
             f"{manifest.shard_id}: token_count mismatch "

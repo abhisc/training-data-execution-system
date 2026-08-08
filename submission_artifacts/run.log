@@ -1,32 +1,32 @@
-[2026-08-07T19:37:49Z] === Training Data Execution System demo starting ===
-[2026-08-07T19:37:49Z] [PASS] tokenizer_hash_verified 4897743e503ae24528f61ece51ec812a0fda39fc1105f43c4b19e55b24efa511
-[2026-08-07T19:37:49Z] EVENT shards created
-[2026-08-07T19:37:49Z] EVENT manifests validated
-[2026-08-07T19:37:49Z] created 22 shards with manifests
-[2026-08-07T19:37:49Z] registered 4 never-train eval/val shards
-[2026-08-07T19:37:49Z] [PASS] eval_shard_blocked shard_eval_eval_001
-[2026-08-07T19:37:49Z] EVENT evaluation data blocked
-[2026-08-07T19:37:49Z] EVENT mixture compiled
-[2026-08-07T19:37:49Z] planned shares: {"web": 0.24, "code": 0.2, "math": 0.14, "indic": 0.2, "agentic": 0.16, "reasoning": 0.06}
-[2026-08-07T19:37:49Z] batches packed policy=pad_only util=1.000 useful=42 ok=True
-[2026-08-07T19:37:49Z] batches packed policy=concat_chop util=1.000 useful=42 ok=True
-[2026-08-07T19:37:49Z] batches packed policy=greedy util=1.000 useful=42 ok=True
-[2026-08-07T19:37:49Z] batches packed policy=best_fit util=1.000 useful=26 ok=True
-[2026-08-07T19:37:49Z] batches packed policy=structure_preserving util=1.000 useful=42 ok=True
-[2026-08-07T19:37:49Z] EVENT batches packed
-[2026-08-07T19:37:49Z] training start total_steps=50 crash_at=25 checkpoint_every=10
-[2026-08-07T19:37:49Z] [PASS] checkpoint_saved ckpt_step00020
-[2026-08-07T19:37:49Z] EVENT checkpoint saved
-[2026-08-07T19:37:49Z] EVENT crash simulated
-[2026-08-07T19:37:49Z] crash detail: Simulated crash at global_step=25 after checkpoint=ckpt_step00020
-[2026-08-07T19:37:49Z] EVENT run resumed
-[2026-08-07T19:37:49Z] [PASS] resume_next_batch_matched step=20 hash=b5a4c5af20d1
-[2026-08-07T19:37:49Z] EVENT OPUS decisions recorded
-[2026-08-07T19:37:49Z] EVENT historical stream replayed
-[2026-08-07T19:37:49Z] [PASS] replay_hash_matched interval=[5,15)
-[2026-08-07T19:37:49Z] EVENT branch forked
-[2026-08-07T19:37:49Z] forked branch=branch_experiment_a from ckpt_step00010
-[2026-08-07T19:37:49Z] EVENT performance measured
-[2026-08-07T19:37:49Z] useful_tokens/s=176506.86 util=1.000
-[2026-08-07T19:37:49Z] EVENT audit completed
-[2026-08-07T19:37:49Z] === Demo complete: all evidence PASS ===
+[2026-08-08T00:56:14Z] === Training Data Execution System demo starting ===
+[2026-08-08T00:56:14Z] [PASS] tokenizer_hash_verified 4897743e503ae24528f61ece51ec812a0fda39fc1105f43c4b19e55b24efa511
+[2026-08-08T00:56:14Z] EVENT shards created
+[2026-08-08T00:56:14Z] EVENT manifests validated
+[2026-08-08T00:56:14Z] created 22 shards with manifests
+[2026-08-08T00:56:14Z] registered 4 never-train eval/val shards
+[2026-08-08T00:56:14Z] [PASS] eval_shard_blocked shard_eval_eval_001
+[2026-08-08T00:56:14Z] EVENT evaluation data blocked
+[2026-08-08T00:56:14Z] EVENT mixture compiled
+[2026-08-08T00:56:14Z] planned shares: {"web": 0.24, "code": 0.2, "math": 0.14, "indic": 0.2, "agentic": 0.16, "reasoning": 0.06}
+[2026-08-08T00:56:14Z] batches packed policy=pad_only util=1.000 useful=42 ok=True
+[2026-08-08T00:56:14Z] batches packed policy=concat_chop util=1.000 useful=42 ok=True
+[2026-08-08T00:56:14Z] batches packed policy=greedy util=1.000 useful=42 ok=True
+[2026-08-08T00:56:14Z] batches packed policy=best_fit util=1.000 useful=26 ok=True
+[2026-08-08T00:56:14Z] batches packed policy=structure_preserving util=1.000 useful=42 ok=True
+[2026-08-08T00:56:14Z] EVENT batches packed
+[2026-08-08T00:56:14Z] training start total_steps=50 crash_at=25 checkpoint_every=10
+[2026-08-08T00:56:14Z] EVENT OPUS decisions recorded
+[2026-08-08T00:56:14Z] [PASS] checkpoint_saved ckpt_step00020
+[2026-08-08T00:56:14Z] EVENT checkpoint saved
+[2026-08-08T00:56:14Z] EVENT crash simulated
+[2026-08-08T00:56:14Z] crash detail: Simulated crash at global_step=25 after checkpoint=ckpt_step00020
+[2026-08-08T00:56:14Z] EVENT run resumed
+[2026-08-08T00:56:14Z] [PASS] resume_next_batch_matched step=20 hash=b5a4c5af20d1
+[2026-08-08T00:56:14Z] EVENT historical stream replayed
+[2026-08-08T00:56:14Z] [PASS] replay_hash_matched interval=[5,15)
+[2026-08-08T00:56:14Z] EVENT branch forked
+[2026-08-08T00:56:14Z] forked branch=branch_experiment_a from ckpt_step00010
+[2026-08-08T00:56:14Z] EVENT audit completed
+[2026-08-08T00:56:14Z] EVENT performance measured
+[2026-08-08T00:56:14Z] useful_tokens/s=137198.42 util=1.000
+[2026-08-08T00:56:14Z] === Demo complete: all evidence PASS ===

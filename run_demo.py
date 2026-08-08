@@ -238,6 +238,26 @@ def main() -> int:
         crash_at=CRASH_AT,
         checkpoint_every=CHECKPOINT_EVERY,
     )
+
+    # Chronological narrative: OPUS decisions were written during training,
+    # before checkpoint / crash / resume markers below.
+    logger.event("OPUS decisions recorded")
+    opus_decisions = {d.decision for d in trainer.opus.decisions}
+    if "floor_override" not in opus_decisions:
+        logger.fail("opus_floor_override_missing")
+        return 1
+
+    opus_rows = ledgers.opus.read_all()
+    decision_types = sorted({r["decision"] for r in opus_rows})
+    opus_report = {
+        "ok": set(decision_types) >= {"accept", "reject", "defer", "floor_override"},
+        "decision_types": decision_types,
+        "count": len(opus_rows),
+    }
+    (artifacts / "opus_report.json").write_text(
+        json.dumps(opus_report, indent=2), encoding="utf-8"
+    )
+
     if trainer.checkpoints:
         logger.pass_("checkpoint_saved", trainer.checkpoints[-1])
         logger.event("checkpoint saved")
@@ -261,24 +281,6 @@ def main() -> int:
     else:
         logger.fail("resume_next_batch_matched", json.dumps(resume_proof))
         return 1
-
-    # Ensure OPUS decisions recorded
-    logger.event("OPUS decisions recorded")
-    opus_decisions = {d.decision for d in trainer.opus.decisions}
-    if "floor_override" not in opus_decisions:
-        logger.fail("opus_floor_override_missing")
-        return 1
-
-    opus_rows = ledgers.opus.read_all()
-    decision_types = sorted({r["decision"] for r in opus_rows})
-    opus_report = {
-        "ok": set(decision_types) >= {"accept", "reject", "defer", "floor_override"},
-        "decision_types": decision_types,
-        "count": len(opus_rows),
-    }
-    (artifacts / "opus_report.json").write_text(
-        json.dumps(opus_report, indent=2), encoding="utf-8"
-    )
 
     # ------------------------------------------------------------------
     # 7. Replay
@@ -375,17 +377,12 @@ def main() -> int:
     )
 
     # ------------------------------------------------------------------
-    # 10. Performance
+    # 10. Performance (compute + persist before audit; log event after)
     # ------------------------------------------------------------------
     performance = compute_performance(
         trainer.perf_events, trainer.opus, ledgers, seq_len=SEQ_LEN
     )
     save_performance(performance, artifacts / "performance.json")
-    logger.event("performance measured")
-    logger.info(
-        f"useful_tokens/s={performance['useful_loss_bearing_tokens_per_sec']:.2f} "
-        f"util={performance['packing_utilization_avg']:.3f}"
-    )
 
     # ------------------------------------------------------------------
     # 11. Evidence + audit
@@ -414,6 +411,12 @@ def main() -> int:
     save_evidence(evidence, artifacts)
     logger.event("audit completed")
 
+    logger.event("performance measured")
+    logger.info(
+        f"useful_tokens/s={performance['useful_loss_bearing_tokens_per_sec']:.2f} "
+        f"util={performance['packing_utilization_avg']:.3f}"
+    )
+
     # Final summary of required PASS lines
     required = [
         "tokenizer_hash_verified",
@@ -426,6 +429,30 @@ def main() -> int:
     missing = [r for r in required if f"[PASS] {r}" not in log_text]
     if missing:
         logger.fail("demo_complete", f"missing PASS markers: {missing}")
+        return 1
+
+    narrative = [
+        "shards created",
+        "manifests validated",
+        "evaluation data blocked",
+        "mixture compiled",
+        "batches packed",
+        "OPUS decisions recorded",
+        "checkpoint saved",
+        "crash simulated",
+        "run resumed",
+        "historical stream replayed",
+        "branch forked",
+        "audit completed",
+        "performance measured",
+    ]
+    try:
+        positions = [log_text.index(f"EVENT {e}") for e in narrative]
+    except ValueError as exc:
+        logger.fail("event_narrative", f"missing EVENT marker: {exc}")
+        return 1
+    if positions != sorted(positions):
+        logger.fail("event_narrative", "EVENT markers out of chronological order")
         return 1
 
     if not evidence["all_passed"]:

@@ -192,6 +192,11 @@ def test_resume_no_skip_or_duplicate(workspace, tmp_path):
     assert len(at_step) == 1
     assert at_step[0]["batch_hash"] == result["proof"]["expected_batch_hash"]
     assert at_step[0]["batch_hash"] == result["proof"]["resumed_batch_hash"]
+    # Bit-exact: token ids, positions, and masks must match (no single-token drift)
+    assert result["proof"]["token_ids_match"] is True
+    assert result["proof"]["position_ids_match"] is True
+    assert result["proof"]["loss_mask_match"] is True
+    assert "token_ids" in at_step[0] and "position_ids" in at_step[0]
     # Immediate predecessor exists (no skipped step in the original stream)
     assert any(r["global_step"] == step - 1 for r in trainer.batch_stream)
 
@@ -218,6 +223,23 @@ def test_replay_hashes_match(workspace, tmp_path):
         trainer, start_step=3, end_step=12, original_stream=trainer.batch_stream
     )
     assert proof["ok"], proof
+    for cmp in proof["comparisons"]:
+        assert cmp["ok"]
+        assert cmp["token_ids_match"] is True
+        assert cmp["position_ids_match"] is True
+        assert cmp["loss_mask_match"] is True
+        assert cmp["original_hash"] == cmp["replay_hash"]
+
+
+def test_manifest_paths_are_not_machine_local(workspace):
+    """On-disk manifests must use portable relative shard_path values."""
+    manifests_dir = workspace["base"] / "manifests"
+    for path in manifests_dir.glob("*.json"):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        shard_path = data["shard_path"]
+        assert not Path(shard_path).is_absolute(), shard_path
+        assert "Users" not in shard_path and "home" not in shard_path.lower()
+        assert shard_path.startswith("shards/")
 
 
 def test_no_eval_in_consumption(workspace, tmp_path):
@@ -258,8 +280,33 @@ def test_evidence_points_to_real_artifacts():
         "replay_hash_matched",
     ]:
         assert f"[PASS] {name}" in log
+    # Required chronological EVENT narrative
+    events = [
+        "shards created",
+        "manifests validated",
+        "evaluation data blocked",
+        "mixture compiled",
+        "batches packed",
+        "OPUS decisions recorded",
+        "checkpoint saved",
+        "crash simulated",
+        "run resumed",
+        "historical stream replayed",
+        "branch forked",
+        "audit completed",
+        "performance measured",
+    ]
+    positions = [log.index(f"EVENT {e}") for e in events]
+    assert positions == sorted(positions), list(zip(events, positions))
     assert (artifacts / "performance.json").exists()
     assert (artifacts / "evidence.md").exists()
     assert list((artifacts / "manifests").glob("*.json"))
     assert (artifacts / "ledgers" / "consumption.jsonl").exists()
     assert (artifacts / "ledgers" / "learning.jsonl").exists()
+    # No machine-local absolute paths in submitted manifests / checkpoints
+    for path in (artifacts / "manifests").glob("*.json"):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        assert not Path(data["shard_path"]).is_absolute()
+    for path in (artifacts / "checkpoints").glob("*.json"):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        assert not Path(data["path"]).is_absolute()
